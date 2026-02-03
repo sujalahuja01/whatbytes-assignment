@@ -1,11 +1,23 @@
+"use client";
+
 import { Product } from "@/data/products";
 import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 type Props = {
   product: Product;
+  onAdd?: () => void;
 };
 
-export default function ProductCard({ product }: Props) {
+export default function ProductCard({ product, onAdd }: Props) {
+  const { addToCart } = useCart();
+  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    addToCart(product, 1);
+    onAdd?.();
+  };
   return (
     <Link href={`/product/${product.id}`}>
       <div className="bg-white rounded-xl shadow-md p-4 flex flex-col">
@@ -18,7 +30,10 @@ export default function ProductCard({ product }: Props) {
         <h3 className="text-sm font-medium mb-1">{product.title}</h3>
         <p className="text-sm font-semibold mb-3">${product.price}</p>
 
-        <button className="mt-auto bg-blue-600 hover:bg-blue-500 text-white text-sm py-2 rounded-md">
+        <button
+          onClick={handleAddToCart}
+          className="mt-auto bg-blue-600 hover:bg-blue-500 text-white text-sm py-2 rounded-md"
+        >
           Add to Cart
         </button>
       </div>

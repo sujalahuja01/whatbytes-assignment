@@ -7,6 +7,7 @@ type FiltersProps = {
   setCategory: (value: Category) => void;
   price: number;
   setPrice: (value: number) => void;
+  onClose?: () => void;
 };
 
 const categories: Category[] = ["all", "electronics", "clothing", "home"];
@@ -16,6 +17,7 @@ export default function Filters({
   setCategory,
   price,
   setPrice,
+  onClose,
 }: FiltersProps) {
   return (
     <div className="bg-gradient-to-b from-blue-700 to-blue-800 text-white rounded-xl p-5">
@@ -34,7 +36,10 @@ export default function Filters({
                 type="radio"
                 name="category"
                 checked={category === item}
-                onChange={() => setCategory(item)}
+                onChange={() => {
+                  setCategory(item);
+                  onClose?.();
+                }}
               />
               <span className="capitalize">{item}</span>
             </label>

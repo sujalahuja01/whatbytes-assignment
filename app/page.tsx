@@ -12,6 +12,17 @@ export default function Home() {
   const [category, setCategory] = useState<Category>("all");
   const [price, setPrice] = useState(1000);
   const [search, setSearch] = useState("");
+  const [cartPulse, setCartPulse] = useState(false);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+
+  const toggleFilters = () => {
+    setFiltersOpen((prev) => !prev);
+  };
+
+  const triggerCartAnimation = () => {
+    setCartPulse(true);
+    setTimeout(() => setCartPulse(false), 300);
+  };
 
   const filteredProducts = products.filter((product) => {
     const categoryMatch = category === "all" || product.category === category;
@@ -28,15 +39,31 @@ export default function Home() {
 
   return (
     <>
-      <Header search={search} setSearch={setSearch} />
+      <Header search={search} setSearch={setSearch} pulse={cartPulse} />
+      {/* Mobile filter toggle */}
 
       <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-6">
-        <aside className="col-span-12 lg:col-span-3">
+        <div className="lg:hidden mb-4">
+          <button
+            onClick={toggleFilters}
+            className="bg-blue-600 text-white px-4 py-2 w-40 rounded-md text-sm"
+          >
+            {filtersOpen ? "Hide Filters" : "Show Filters"}
+          </button>
+        </div>
+        <aside
+          className={`
+    col-span-12 lg:col-span-3
+    ${filtersOpen ? "block" : "hidden"}
+    lg:block
+  `}
+        >
           <Filters
             category={category}
             setCategory={setCategory}
             price={price}
             setPrice={setPrice}
+            onClose={() => setFiltersOpen(false)}
           />
         </aside>
 
@@ -48,7 +75,11 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onAdd={triggerCartAnimation}
+                />
               ))}
             </div>
           )}

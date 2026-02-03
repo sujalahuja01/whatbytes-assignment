@@ -1,4 +1,5 @@
 "use client";
+import { useCart } from "@/context/CartContext";
 
 import { useParams } from "next/navigation";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import Image from "next/image";
 export default function ProductDetailPage() {
   const { id } = useParams();
   const product = products.find((p) => p.id === id);
+  const { addToCart } = useCart();
 
   const [quantity, setQuantity] = useState(1);
 
@@ -69,7 +71,10 @@ export default function ProductDetailPage() {
             </div>
           </div>
 
-          <button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-md w-fit">
+          <button
+            onClick={() => addToCart(product, quantity)}
+            className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-md w-fit"
+          >
             Add to Cart
           </button>
 
