@@ -1,3 +1,5 @@
+"use client";
+import Link from "next/link";
 import { Facebook, Twitter, Instagram } from "lucide-react";
 
 export default function Footer() {
@@ -5,12 +7,22 @@ export default function Footer() {
     <footer className=" mt-16">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
         <div>
-          <p className="font-semibold mb-2">Filters</p>
-          <p>All</p>
-          <p>Electronics</p>
-          <p>Clothing</p>
-          <p>Home</p>
-          <p className="mt-4 text-xs text-white/70">© 2024 American</p>
+          <Link href="/" className="block hover:underline">
+            All
+          </Link>
+
+          <Link href="/?category=electronics" className="block hover:underline">
+            Electronics
+          </Link>
+
+          <Link href="/?category=clothing" className="block hover:underline">
+            Clothing
+          </Link>
+
+          <Link href="/?category=home" className="block hover:underline">
+            Home
+          </Link>
+          <p className="mt-4 text-xs text-white/70">© 2026 Sujal Ahuja</p>
         </div>
 
         <div>

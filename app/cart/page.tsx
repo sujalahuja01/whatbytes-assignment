@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { Trash2 } from "lucide-react";
+import Image from "next/image";
 
 export default function CartPage() {
   const { cart, updateQuantity, removeFromCart } = useCart();
@@ -36,42 +38,57 @@ export default function CartPage() {
         {cart.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-xl shadow-md p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+            className="bg-white rounded-xl shadow-md p-6 grid grid-cols-12 gap-6 items-start"
           >
-            <div>
-              <h3 className="font-medium">{item.title}</h3>
-              <p className="text-sm text-gray-500">${item.price}</p>
+            <div className="col-span-12 sm:col-span-2 flex flex-col items-center gap-3">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={90}
+                height={90}
+                className="object-contain"
+              />
             </div>
 
-            <div className="flex items-center gap-3">
-              <button
-                className="px-3 py-1 border rounded"
-                onClick={() =>
-                  updateQuantity(item.id, Math.max(1, item.quantity - 1))
-                }
-              >
-                −
-              </button>
+            <div className="col-span-12 sm:col-span-7">
+              <h3 className="font-medium leading-snug">{item.title}</h3>
+              <p className="text-sm text-gray-500 mt-1">
+                In stock · Eligible for FREE delivery
+              </p>
 
-              <span className="w-6 text-center">{item.quantity}</span>
+              <div className="flex gap-4 py-5  ">
+                <div className="flex items-center border rounded-md">
+                  <button
+                    className="px-2 py-1"
+                    onClick={() =>
+                      updateQuantity(item.id, Math.max(1, item.quantity - 1))
+                    }
+                  >
+                    −
+                  </button>
 
-              <button
-                className="px-3 py-1 border rounded"
-                onClick={() => updateQuantity(item.id, item.quantity + 1)}
-              >
-                +
-              </button>
+                  <span className="px-3 text-sm">{item.quantity}</span>
+
+                  <button
+                    className="px-2 py-1"
+                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  >
+                    +
+                  </button>
+                </div>
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  className=" text-gray-500 hover:text-red-500"
+                  aria-label="Remove item"
+                >
+                  <Trash2 size={18} />
+                </button>
+              </div>
             </div>
 
-            <div className="flex items-center gap-6">
-              <p className="font-semibold">${item.price * item.quantity}</p>
-
-              <button
-                onClick={() => removeFromCart(item.id)}
-                className="text-sm text-red-500 hover:underline"
-              >
-                Remove
-              </button>
+            <div className="col-span-12 sm:col-span-3 text-right font-semibold text-lg">
+              ${item.price * item.quantity}
+              <p className="text-[12px]">Up to 5% back with selected card</p>
             </div>
           </div>
         ))}
