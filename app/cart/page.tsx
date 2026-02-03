@@ -38,13 +38,11 @@ export default function CartPage() {
             key={item.id}
             className="bg-white rounded-xl shadow-md p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
           >
-            {/* Product info */}
             <div>
               <h3 className="font-medium">{item.title}</h3>
               <p className="text-sm text-gray-500">${item.price}</p>
             </div>
 
-            {/* Quantity controls */}
             <div className="flex items-center gap-3">
               <button
                 className="px-3 py-1 border rounded"
@@ -65,7 +63,6 @@ export default function CartPage() {
               </button>
             </div>
 
-            {/* Price + remove */}
             <div className="flex items-center gap-6">
               <p className="font-semibold">${item.price * item.quantity}</p>
 
@@ -80,7 +77,6 @@ export default function CartPage() {
         ))}
       </div>
 
-      {/* Summary */}
       <div className="mt-10 flex justify-end">
         <div className="bg-white rounded-xl shadow-md p-6 w-full sm:w-80">
           <div className="flex justify-between mb-4">

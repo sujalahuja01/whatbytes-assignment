@@ -40,7 +40,6 @@ export default function Home() {
   return (
     <>
       <Header search={search} setSearch={setSearch} pulse={cartPulse} />
-      {/* Mobile filter toggle */}
 
       <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-12 gap-6">
         <div className="lg:hidden mb-4">

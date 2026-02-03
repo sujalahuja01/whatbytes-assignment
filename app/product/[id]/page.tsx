@@ -24,7 +24,6 @@ export default function ProductDetailPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* LEFT: Image */}
         <div className="flex justify-center lg:justify-start">
           <Image
             src={product.image}
@@ -36,7 +35,6 @@ export default function ProductDetailPage() {
           />
         </div>
 
-        {/* RIGHT: Details */}
         <div className="flex flex-col">
           <h1 className="text-3xl font-semibold mb-2">{product.title}</h1>
 
@@ -51,7 +49,6 @@ export default function ProductDetailPage() {
             <span className="capitalize">{product.category}</span>
           </p>
 
-          {/* Quantity */}
           <div className="flex items-center gap-4 mb-8">
             <span className="text-sm font-medium">Quantity:</span>
             <div className="flex items-center border rounded-md">
@@ -78,7 +75,6 @@ export default function ProductDetailPage() {
             Add to Cart
           </button>
 
-          {/* Reviews */}
           <div className="mt-12">
             <h3 className="font-semibold mb-2">Reviews</h3>
             <p className="text-sm text-gray-500">No reviews yet.</p>
