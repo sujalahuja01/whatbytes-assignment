@@ -3,7 +3,7 @@ import { useCart } from "@/context/CartContext";
 
 import { useParams } from "next/navigation";
 import { useState } from "react";
-import { products } from "@/data/products";
+import { products } from "@/data/products.js";
 import Image from "next/image";
 
 export default function ProductDetailPage() {

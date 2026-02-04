@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Header from "@/components/Header";
-import Filters from "@/components/Filters";
-import ProductCard from "@/components/ProductCard";
-import { products } from "@/data/products";
+import Header from "@/components/Header.jsx";
+import Filters from "@/components/Filters.jsx";
+import ProductCard from "@/components/ProductCard.jsx";
+import { products } from "@/data/products.js";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Home() {
