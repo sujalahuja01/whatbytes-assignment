@@ -97,7 +97,7 @@ export default function ProductDetailPage() {
 
           <button
             onClick={() => addToCart(product, quantity)}
-            className="bg-brandblue hover:bg-brandblue/80 text-white px-8 py-3 rounded-md w-fit transition-colors duration-200 ease-in-out"
+            className="bg-brandblue hover:bg-darkblue/90 text-white px-8 py-3 rounded-md w-fit transition-colors duration-200 ease-in-out"
           >
             Add to Cart
           </button>

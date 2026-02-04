@@ -22,7 +22,7 @@ export default function CartPage() {
         </p>
         <Link
           href="/"
-          className="inline-block bg-brandblue hover:bg-darkblue/90 text-white px-6 py-3 rounded-md transition-colors duration-200 ease-in-out"
+          className="inline-block bg-brandblue hover:bg-darkblue/90 text-white px-6 py-3 rounded-md"
         >
           Continue Shopping
         </Link>
@@ -107,9 +107,14 @@ export default function CartPage() {
             <span className="font-semibold">${totalPrice}</span>
           </div>
 
-          <button className="w-full bg-brandblue hover:bg-darkblue/90 text-white py-3 rounded-md transition-colors duration-200 ease-in-out">
+          <a
+            href="https://www.youtube.com/watch?v=Aq5WXmQQooo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center bg-brandblue hover:bg-darkblue/90 text-white py-3 rounded-md transition-colors duration-200 ease-in-out"
+          >
             Checkout
-          </button>
+          </a>
         </div>
       </div>
     </div>
