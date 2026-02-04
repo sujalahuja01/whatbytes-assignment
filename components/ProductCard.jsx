@@ -26,7 +26,7 @@ export default function ProductCard({ product, onAdd }) {
 
         <button
           onClick={handleAddToCart}
-          className="mt-auto bg-brandblue hover:bg-brandblue/80 text-white text-sm py-2 rounded-md transition-colors duration-200 ease-in-out"
+          className="mt-auto bg-brandblue hover:bg-darkblue/90 text-white text-sm py-2 rounded-md transition-colors duration-200 ease-in-out"
         >
           Add to Cart
         </button>

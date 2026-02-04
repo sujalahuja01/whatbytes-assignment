@@ -22,7 +22,7 @@ export default function CartPage() {
         </p>
         <Link
           href="/"
-          className="inline-block bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-md"
+          className="inline-block bg-brandblue hover:bg-darkblue/90 text-white px-6 py-3 rounded-md transition-colors duration-200 ease-in-out"
         >
           Continue Shopping
         </Link>
@@ -94,14 +94,20 @@ export default function CartPage() {
         ))}
       </div>
 
-      <div className="mt-10 flex justify-end">
+      <div className="mt-10 flex flex-col md:flex-row items-end md:items-start gap-10 justify-between">
+        <Link
+          href="/"
+          className="inline-block bg-brandblue hover:bg-darkblue/90 text-white px-6 py-3 rounded-md"
+        >
+          Continue Shopping
+        </Link>
         <div className="bg-white rounded-xl shadow-md p-6 w-full sm:w-80">
           <div className="flex justify-between mb-4">
             <span className="text-sm">Subtotal</span>
             <span className="font-semibold">${totalPrice}</span>
           </div>
 
-          <button className="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-md">
+          <button className="w-full bg-brandblue hover:bg-darkblue/90 text-white py-3 rounded-md transition-colors duration-200 ease-in-out">
             Checkout
           </button>
         </div>
