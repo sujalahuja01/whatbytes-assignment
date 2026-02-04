@@ -3,12 +3,14 @@
 :root {
   --background: #f9fbff;
   --foreground: #171717;
-  --darkblue: #0858a8;
+  --brandblue: #0858a8;
+  --darkblue: #002a59;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brandblue: var(--brandblue);
   --color-darkblue: var(--darkblue);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

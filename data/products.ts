@@ -4,6 +4,7 @@ export type Product = {
   price: number;
   category: "electronics" | "clothing" | "home";
   image: string;
+  carousel: string[];
   rating?: number;
   description: string;
 };
@@ -15,6 +16,11 @@ export const products: Product[] = [
     price: 99,
     category: "electronics",
     image: "/products/headphones.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.5,
     description: "High-quality wireless headphones with noise cancellation.",
   },
@@ -24,6 +30,11 @@ export const products: Product[] = [
     price: 249,
     category: "electronics",
     image: "/products/smartwatch.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.2,
     description: "Smartwatch with fitness tracking and notifications.",
   },
@@ -33,6 +44,11 @@ export const products: Product[] = [
     price: 499,
     category: "electronics",
     image: "/products/camera.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.6,
     description: "Compact digital camera with high-resolution imaging.",
   },
@@ -42,6 +58,11 @@ export const products: Product[] = [
     price: 699,
     category: "electronics",
     image: "/products/smartphone.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.8,
     description:
       "Latest smartphone with powerful performance and sleek design.",
@@ -52,7 +73,13 @@ export const products: Product[] = [
     title: "T-Shirt",
     price: 29,
     category: "clothing",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     image: "/products/t-shirt.jpg",
+
     rating: 4.1,
     description: "Comfortable cotton t-shirt for everyday wear.",
   },
@@ -61,7 +88,13 @@ export const products: Product[] = [
     title: "Running Shoes",
     price: 99,
     category: "clothing",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     image: "/products/shoes.jpg",
+
     rating: 4.4,
     description: "Lightweight running shoes with excellent grip.",
   },
@@ -70,7 +103,13 @@ export const products: Product[] = [
     title: "Sunglasses",
     price: 149,
     category: "clothing",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     image: "/products/sunglasses.jpg",
+
     rating: 4.0,
     description: "Stylish sunglasses with UV protection.",
   },
@@ -81,6 +120,11 @@ export const products: Product[] = [
     price: 129,
     category: "home",
     image: "/products/backpack.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.3,
     description: "Durable backpack suitable for travel and daily use.",
   },
@@ -90,6 +134,11 @@ export const products: Product[] = [
     price: 59,
     category: "home",
     image: "/products/lamp.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.2,
     description: "Modern table lamp with warm lighting.",
   },
@@ -99,6 +148,11 @@ export const products: Product[] = [
     price: 199,
     category: "home",
     image: "/products/chair.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.5,
     description: "Ergonomic office chair for long working hours.",
   },
@@ -108,6 +162,11 @@ export const products: Product[] = [
     price: 89,
     category: "electronics",
     image: "/products/speaker.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.3,
     description:
       "Portable Bluetooth speaker with deep bass and long battery life.",
@@ -118,6 +177,11 @@ export const products: Product[] = [
     price: 999,
     category: "electronics",
     image: "/products/laptop.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.7,
     description: "High-performance laptop suitable for work and entertainment.",
   },
@@ -127,6 +191,11 @@ export const products: Product[] = [
     price: 39,
     category: "electronics",
     image: "/products/mouse.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.1,
     description: "Ergonomic wireless mouse with precision tracking.",
   },
@@ -135,7 +204,13 @@ export const products: Product[] = [
     title: "Hoodie",
     price: 79,
     category: "clothing",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     image: "/products/hoodies.jpg",
+
     rating: 4.5,
     description: "Warm and comfortable hoodie for casual wear.",
   },
@@ -144,7 +219,13 @@ export const products: Product[] = [
     title: "Jeans",
     price: 69,
     category: "clothing",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     image: "/products/jeans.jpg",
+
     rating: 4.2,
     description: "Classic fit denim jeans for everyday use.",
   },
@@ -153,7 +234,13 @@ export const products: Product[] = [
     title: "Jacket",
     price: 149,
     category: "clothing",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     image: "/products/jacket.jpg",
+
     rating: 4.6,
     description: "Stylish jacket suitable for all seasons.",
   },
@@ -163,6 +250,11 @@ export const products: Product[] = [
     price: 129,
     category: "home",
     image: "/products/coffeemaker.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.4,
     description: "Automatic coffee maker for fresh brews every morning.",
   },
@@ -172,6 +264,11 @@ export const products: Product[] = [
     price: 39,
     category: "home",
     image: "/products/clock.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.0,
     description: "Minimalist wall clock with silent movement.",
   },
@@ -181,6 +278,11 @@ export const products: Product[] = [
     price: 179,
     category: "home",
     image: "/products/shelves.jpg",
+    carousel: [
+      "/products/headphones-1.jpg",
+      "/products/headphones-2.jpg",
+      "/products/headphones-3.jpg",
+    ],
     rating: 4.5,
     description: "Spacious wooden bookshelf for home or office.",
   },

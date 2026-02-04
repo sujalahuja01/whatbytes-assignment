@@ -74,7 +74,7 @@ export default function Home() {
         <div className="lg:hidden mb-4">
           <button
             onClick={toggleFilters}
-            className="bg-blue text-white px-4 py-2 w-40 rounded-md text-sm"
+            className="bg-brandblue text-white px-4 py-2 w-40 rounded-md text-sm"
           >
             {filtersOpen ? "Hide Filters" : "Show Filters"}
           </button>
@@ -91,7 +91,6 @@ export default function Home() {
             setCategory={setCategory}
             price={price}
             setPrice={setPrice}
-            onClose={() => setFiltersOpen(false)}
           />
         </aside>
 

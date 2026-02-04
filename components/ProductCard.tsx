@@ -32,7 +32,7 @@ export default function ProductCard({ product, onAdd }: Props) {
 
         <button
           onClick={handleAddToCart}
-          className="mt-auto bg-blue-600 hover:bg-blue-500 text-white text-sm py-2 rounded-md"
+          className="mt-auto bg-brandblue hover:bg-brandblue/80 text-white text-sm py-2 rounded-md transition-colors duration-200 ease-in-out"
         >
           Add to Cart
         </button>

@@ -21,18 +21,51 @@ export default function ProductDetailPage() {
     );
   }
 
+  const [selectedImage, setSelectedImage] = useState(product.image);
+
+  const updateQuantity = (delta: number) => {
+    setQuantity((prev) => Math.max(1, prev + delta));
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div className="flex justify-center lg:justify-start">
-          <Image
-            src={product.image}
-            alt={product.title}
-            width={520}
-            height={520}
-            className="object-contain max-h-[420px]"
-            priority
-          />
+        <div className="flex flex-col gap-4">
+          <div className="flex justify-center">
+            <Image
+              src={selectedImage}
+              alt={product.title}
+              width={520}
+              height={520}
+              className="object-contain max-h-[420px]"
+              priority
+            />
+          </div>
+
+          {product.carousel && (
+            <div className="flex gap-3 justify-center ">
+              {[product.image, ...product.carousel].map((img) => (
+                <button
+                  key={img}
+                  onClick={() => setSelectedImage(img)}
+                  className={`border rounded-md p-1  transition
+            ${
+              selectedImage === img
+                ? "border-brandblue"
+                : "border-gray-200 hover:border-gray-400"
+            }`}
+                >
+                  <Image
+                    src={img}
+                    alt="Product thumbnail"
+                    width={70}
+                    height={70}
+                    className="object-contain"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col">
@@ -52,17 +85,11 @@ export default function ProductDetailPage() {
           <div className="flex items-center gap-4 mb-8">
             <span className="text-sm font-medium">Quantity:</span>
             <div className="flex items-center border rounded-md">
-              <button
-                className="px-4 py-2"
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-              >
+              <button className="px-4 py-2" onClick={() => updateQuantity(-1)}>
                 −
               </button>
               <span className="px-6">{quantity}</span>
-              <button
-                className="px-4 py-2"
-                onClick={() => setQuantity((q) => q + 1)}
-              >
+              <button className="px-4 py-2" onClick={() => updateQuantity(1)}>
                 +
               </button>
             </div>
@@ -70,7 +97,7 @@ export default function ProductDetailPage() {
 
           <button
             onClick={() => addToCart(product, quantity)}
-            className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-md w-fit"
+            className="bg-brandblue hover:bg-brandblue/80 text-white px-8 py-3 rounded-md w-fit transition-colors duration-200 ease-in-out"
           >
             Add to Cart
           </button>

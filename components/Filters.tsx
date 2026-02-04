@@ -7,7 +7,6 @@ type FiltersProps = {
   setCategory: (value: Category) => void;
   price: number;
   setPrice: (value: number) => void;
-  onClose?: () => void;
 };
 
 const categories: Category[] = ["all", "electronics", "clothing", "home"];
@@ -17,10 +16,9 @@ export default function Filters({
   setCategory,
   price,
   setPrice,
-  onClose,
 }: FiltersProps) {
   return (
-    <div className="bg-gradient-to-b from-blue-700 to-blue-800 text-white rounded-xl p-5">
+    <div className="bg-brandblue text-white rounded-xl p-5">
       <h3 className="font-semibold mb-6">Filters</h3>
 
       <div className="mb-6">
@@ -38,7 +36,6 @@ export default function Filters({
                 checked={category === item}
                 onChange={() => {
                   setCategory(item);
-                  onClose?.();
                 }}
               />
               <span className="capitalize">{item}</span>
