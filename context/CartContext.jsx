@@ -1,22 +1,10 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { Product } from "@/data/products";
 
-type CartItem = Product & {
-  quantity: number;
-};
-
-type CartContextType = {
-  cart: CartItem[];
-  addToCart: (product: Product, quantity: number) => void;
-  removeFromCart: (id: string) => void;
-  updateQuantity: (id: string, quantity: number) => void;
-};
-
-const CartContext = createContext<CartContextType | null>(null);
-export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>([]);
+const CartContext = createContext(null);
+export function CartProvider({ children }) {
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const stored = localStorage.getItem("cart");
@@ -29,7 +17,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (product: Product, quantity: number) => {
+  const addToCart = (product, quantity) => {
     setCart((prev) => {
       const existing = prev.find((item) => item.id === product.id);
 
@@ -45,11 +33,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     });
   };
 
-  const removeFromCart = (id: string) => {
+  const removeFromCart = (id) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
-  const updateQuantity = (id: string, quantity: number) => {
+  const updateQuantity = (id, quantity) => {
     setCart((prev) =>
       prev.map((item) => (item.id === id ? { ...item, quantity } : item)),
     );

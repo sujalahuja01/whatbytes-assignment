@@ -1,22 +1,8 @@
 "use client";
 
-type Category = "all" | "electronics" | "clothing" | "home";
+const categories = ["all", "electronics", "clothing", "home"];
 
-type FiltersProps = {
-  category: Category;
-  setCategory: (value: Category) => void;
-  price: number;
-  setPrice: (value: number) => void;
-};
-
-const categories: Category[] = ["all", "electronics", "clothing", "home"];
-
-export default function Filters({
-  category,
-  setCategory,
-  price,
-  setPrice,
-}: FiltersProps) {
+export default function Filters({ category, setCategory, price, setPrice }) {
   return (
     <div className="bg-brandblue text-white rounded-xl p-5">
       <h3 className="font-semibold mb-6">Filters</h3>

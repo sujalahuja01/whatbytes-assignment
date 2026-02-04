@@ -1,15 +1,4 @@
-export type Product = {
-  id: string;
-  title: string;
-  price: number;
-  category: "electronics" | "clothing" | "home";
-  image: string;
-  carousel: string[];
-  rating?: number;
-  description: string;
-};
-
-export const products: Product[] = [
+export const products = [
   {
     id: "1",
     title: "Wireless Headphones",

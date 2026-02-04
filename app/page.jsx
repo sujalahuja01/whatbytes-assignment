@@ -7,14 +7,12 @@ import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { useRouter, useSearchParams } from "next/navigation";
 
-type Category = "all" | "electronics" | "clothing" | "home";
-
 export default function Home() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const [category, setCategory] = useState<Category>(
-    (searchParams.get("category") as Category) || "all",
+  const [category, setCategory] = useState(
+    searchParams.get("category") || "all",
   );
 
   const [price, setPrice] = useState(Number(searchParams.get("price")) || 1000);
@@ -35,7 +33,7 @@ export default function Home() {
   }, [category, price, search]);
 
   useEffect(() => {
-    const urlCategory = (searchParams.get("category") as Category) || "all";
+    const urlCategory = searchParams.get("category") || "all";
     const urlPrice = Number(searchParams.get("price")) || 1000;
     const urlSearch = searchParams.get("search") || "";
 

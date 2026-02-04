@@ -1,17 +1,11 @@
 "use client";
 
-import { Product } from "@/data/products";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 
-type Props = {
-  product: Product;
-  onAdd?: () => void;
-};
-
-export default function ProductCard({ product, onAdd }: Props) {
+export default function ProductCard({ product, onAdd }) {
   const { addToCart } = useCart();
-  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleAddToCart = (e) => {
     e.stopPropagation();
     e.preventDefault();
 

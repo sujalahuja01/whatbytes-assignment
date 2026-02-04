@@ -3,13 +3,7 @@
 import { Search, ShoppingCart, User } from "lucide-react";
 import Link from "next/link";
 
-type HeaderProps = {
-  search: string;
-  setSearch: (value: string) => void;
-  pulse?: boolean;
-};
-
-export default function Header({ search, setSearch, pulse }: HeaderProps) {
+export default function Header({ search, setSearch, pulse }) {
   return (
     <header className="bg-brandblue text-white">
       <div className="max-w-7xl mx-auto px-6 py-4">

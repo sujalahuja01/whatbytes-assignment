@@ -23,7 +23,7 @@ export default function ProductDetailPage() {
 
   const [selectedImage, setSelectedImage] = useState(product.image);
 
-  const updateQuantity = (delta: number) => {
+  const updateQuantity = (delta) => {
     setQuantity((prev) => Math.max(1, prev + delta));
   };
 
